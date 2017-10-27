@@ -1,57 +1,30 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+use \Cake\Core\Configure;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
-
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <meta charset="UTF-8">
+    <title>Sermina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="<?= $this->Aou->getVersion('css/style.css') ?>"/>
+    <link rel="stylesheet" href="<?= $this->Aou->getVersion('css/jquery-ui.css') ?>"/>
+    <script src="<?= $this->Aou->getVersion('js/jquery.js') ?>"></script>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
-            </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+<div class="container">
+    <div class="main grey-bg">
         <?= $this->fetch('content') ?>
+        <div class="background-popup"></div>
     </div>
-    <footer>
-    </footer>
+</div>
+<script src="<?= $this->Aou->getVersion('js/jquery-ui.js') ?>"></script>
+<script src="<?= $this->Aou->getVersion('js/detectbrowser.js') ?>"></script>
+<script src="<?= $this->Aou->getVersion('js/pop-up.js') ?>"></script>
+<script src="<?= $this->Aou->getVersion('js/common.js') ?>"></script>
 </body>
 </html>
