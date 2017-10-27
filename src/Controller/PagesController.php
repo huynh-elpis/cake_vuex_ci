@@ -51,7 +51,6 @@ class PagesController extends AppController
     }
     public function info()
     {
-        $this->Auth->setUser(['id'=>1]);
         $this->set('login', $this->Auth->user()?$this->Auth->user():false);
     }
 }
