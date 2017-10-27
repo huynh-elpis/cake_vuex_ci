@@ -81,7 +81,7 @@
   font-size: 12px;
 }
 
-.message-text, .thread-last-message {
+.message-text, .message-text-1, .thread-last-message {
   clear: both;
   font-size: 14px;
   padding-top: 10px;
