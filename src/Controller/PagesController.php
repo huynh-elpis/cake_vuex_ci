@@ -32,7 +32,7 @@ class PagesController extends AppController
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index']);
+        $this->Auth->allow(['index', 'info']);
         parent::beforeFilter($event);
 
     }
