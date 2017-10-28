@@ -51,8 +51,27 @@ jobs:
       # run tests!
       - run: vendor/bin/phpunit
 
+  vuex_job:
+    docker:
+      #- image: node:6
+      - image: karthikiyengar/node-nightwatch:0.0.1
+        environment:
+          BABEL_ENV: development
+    working_directory: ~/repo
+    steps:
+      - run: npm --v
+      - checkout
+      - restore_cache:
+          key: cakephp3-circleci-testci-npm-cache-{{ .Branch }}
+      - run: cd vuex && npm install
+      - save_cache:
+          key: cakephp3-circleci-testci-npm-cache-{{ .Branch }}
+          paths:
+            - "node_modules"
+      - run: cd vuex && npm run lint && npm run test:e2e
 workflows:
   version: 2
   build-all:
     jobs:
       - php_job
+      - vuex_job
