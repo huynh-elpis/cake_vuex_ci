@@ -68,10 +68,27 @@ jobs:
           key: cakephp3-circleci-testci-npm-cache-{{ .Branch }}
           paths:
             - "node_modules"
-      - run: cd vuex && npm run lint && npm run test:e2e
+      - run: cd vuex && npm run lint
+      
+  eslint_javascript:
+    docker:
+      - image: node:6
+    working_directory: /var/www/html
+    steps:
+      - run: npm --v
+      - checkout
+      - restore_cache:
+          key: cakephp3-circleci-startuphub-npm-cache-{{ .Branch }}
+      - run: npm install
+      - save_cache:
+          key: cakephp3-circleci-startuphub-npm-cache-{{ .Branch }}
+          paths:
+            - "/home/ubuntu/.npm-cache"
+      - run: node_modules/.bin/eslint webroot/js/common.js
 workflows:
   version: 2
   build-all:
     jobs:
       - php_job
       - vuex_job
+      - eslint_javascript
