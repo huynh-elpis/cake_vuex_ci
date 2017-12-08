@@ -1,0 +1,16 @@
+{
+    "plugins": [],
+    
+    "indent-style": "spaces",
+    "indent-width": 2,
+
+    //The doctype (<!DOCTYPE ... >) must be the first element in the file, excluding comments and whitespace.
+    "doctype-first": "smart",
+
+    // tags: area, base, br, col, embed, hr, img, input, keygen, link, menuitem, meta, param, source, track, and wbr
+    // must not be self-closed with / (html5 style)
+    "tag-self-close": "never",
+
+    // "id-class-style": "dash"
+    "id-class-style": false
+}

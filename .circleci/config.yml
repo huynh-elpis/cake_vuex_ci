@@ -84,11 +84,16 @@ jobs:
           key: cakephp3-circleci-startuphub-npm-cache-{{ .Branch }}
           paths:
             - "/home/ubuntu/.npm-cache"
-      - run: node_modules/.bin/eslint webroot/js/common.js
+      - run: 
+          name: Check Javascript source code by eslint
+          command: node_modules/.bin/eslint webroot/js/common.js
+      - run: 
+          name: Check HTML source code by htmllint
+          command: node_modules/.bin/htmllint webroot/html/*.html
 workflows:
   version: 2
   build-all:
     jobs:
       - php_job
-      - vuex_job
+      #- vuex_job
       - eslint_javascript

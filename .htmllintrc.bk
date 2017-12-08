@@ -1,0 +1,55 @@
+{
+    // names of npm modules to load into htmllint
+    //"plugins": [],
+    
+    // use https: NOT APPLY
+    
+    // indent
+    "indent-style": "spaces",
+    "indent-width": 2,
+    
+    // Use only lowercase
+    //tag-name-lowercase default ok
+    
+    //Trailing Whitespace : NOT APPLY
+                                                                                                                                                                                                       
+    // Encoding UTF-8 (no BOM).: NOT APPLY
+    
+    // comments and TODO: NOT APPLY
+    
+    // If a head tag is present in the document, then the doctype must come first.
+    "doctype-first": "smart",
+    
+    // Void elements must not be self-closed with / (html5 style).
+    "tag-self-close": "never",
+    
+    // HTML Validity
+    // by default is checked
+    
+    // Sermantics
+    // by default, checked some
+    
+    // Provide alternative contents for multimedia.
+    // by default, src and alt of img must be set.
+    
+    // Separation of Concerns
+    // default attributes bans: ['align', 'background', 'bgcolor', 'border', 'frameborder', 'longdesc', 'marginwidth', 'marginheight', 'scrolling', 'style', 'width']
+    // default tag-bans: ['style', 'b', 'i']
+    
+    // Entity References: NOT APPLY
+    
+    // Omit type attributes for style sheets and scripts.: NOT APPLY
+    
+    // Use a new line for every block, list, or table element, and indent every such child element: NOT APPLY
+    
+    // HTML Line-Wrapping
+    
+    // HTML Quotation Marks: default double quot
+    // attr-quote-style
+    
+    
+    // "id-class-style": "dash"
+    "id-class-style": false
+    
+    // TODO: export htmllint's default cfg
+}
