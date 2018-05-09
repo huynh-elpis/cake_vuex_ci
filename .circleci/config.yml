@@ -46,6 +46,9 @@ jobs:
           name: chmod permissions
           command: chmod +x bin/cake
       - run:
+          command: php -r "ini_set('pdo_mysql.default_socket', '/tmp/mysql.sock');"
+          command: php -r "ini_set('mysql.default_socket', '/tmp/mysql.sock');"
+      - run:
           name: Initialize Database
           command: bin/cake migrations migrate
       # run tests!
