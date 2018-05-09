@@ -45,9 +45,9 @@ jobs:
       - run:
           name: chmod permissions
           command: chmod +x bin/cake
-      - run:
-          name: Initialize Database
-          command: bin/cake migrations migrate
+      # - run:
+      #    name: Initialize Database
+      #    command: bin/cake migrations migrate
       # run tests!
       - run: vendor/bin/phpunit
 
