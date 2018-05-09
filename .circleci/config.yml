@@ -10,10 +10,10 @@ jobs:
       - image: php:7.1-apache
       - image: circleci/mysql:5.7
       environment:
-        - APP_DEBUG: true
-        - APP_ENV: testing
+        - DEBUG: true
         - MYSQL_DATABASE: circle_test
         - MYSQL_ALLOW_EMPTY_PASSWORD: true
+        - MYSQL_HOST: localhost
 
     working_directory: /var/www/html
 
