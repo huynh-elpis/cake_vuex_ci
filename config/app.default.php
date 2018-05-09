@@ -229,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => '',
-            'database' => 'AOU',
+            'username' => 'my_app',
+            'password' => 'secret',
+            'database' => 'my_app',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
@@ -272,7 +272,7 @@ return [
             'password' => '',
             'database' => 'AOU',
             'encoding' => 'utf8',
-            'timezone' => 'UTC',
+            'timezone' => 'Asia/Tokyo',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
             'log' => false,
