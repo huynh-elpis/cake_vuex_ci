@@ -258,7 +258,6 @@ return [
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
             'url' => env('DATABASE_URL', null),
-            'unix_socket' => '/var/run/mysqld/mysqld.sock'
         ],
 
         /**
@@ -279,7 +278,6 @@ return [
             'log' => false,
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
             'url' => env('DATABASE_TEST_URL', null),
-            'unix_socket' => '/var/run/mysqld/mysqld.sock'
         ],
     ],
 
