@@ -48,7 +48,6 @@ jobs:
       - run:
           name: run mysql
           command: mysql -u root -p AOU
-          command: password
       - run:
           name: Initialize Database
           command: bin/cake migrations migrate
