@@ -8,12 +8,15 @@ jobs:
     docker:
       # specify the version you desire here
       - image: php:7.1-apache
-      - image: circleci/mysql:5.7
-      environment:
-        - DEBUG: true
-        - MYSQL_DATABASE: circle_test
-        - MYSQL_ALLOW_EMPTY_PASSWORD: true
-        - MYSQL_HOST: localhost
+        environment:
+          DEBUG: true
+          DATABASE_URL: "mysql://root:password@127.0.0.1/AOU?encoding=utf8mb4&timezone=UTC&cacheMetadata=true"
+          DATABASE_TEST_URL: "mysql://root:password@127.0.0.1/AOU?encoding=utf8mb4&timezone=UTC&cacheMetadata=true"
+      - image: circleci/mysql:8.0
+        command: mysqld  --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+        environment:
+          MYSQL_DATABASE: AOU
+          MYSQL_ROOT_PASSWORD: password
 
     working_directory: /var/www/html
 
@@ -42,9 +45,9 @@ jobs:
       - run:
           name: chmod permissions
           command: chmod +x bin/cake
-      # - run:
-      #    name: Initialize Database
-      #    command: bin/cake migrations migrate
+      - run:
+          name: Initialize Database
+          command: bin/cake migrations migrate
       # run tests!
       - run: vendor/bin/phpunit
 
